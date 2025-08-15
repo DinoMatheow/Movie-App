@@ -54,7 +54,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 </div>
 
 
-
   `,
   styleUrl: './Navbar.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
