@@ -9,7 +9,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-      @for (movie of movieResource.value() ; track $index) {
+      @for (movie of movieResource.value(); track $index) {
           <app-movie-card [movie]="movie"></app-movie-card>
       }
 

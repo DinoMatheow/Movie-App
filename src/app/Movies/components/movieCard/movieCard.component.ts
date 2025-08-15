@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component,input } from '@angular/core';
-import { Movie } from '../../interfaces/movies.interface';
+import { Description } from '../../interfaces/movies.interface';
 
 @Component({
   selector: 'app-movie-card',
@@ -8,8 +8,12 @@ import { Movie } from '../../interfaces/movies.interface';
 
 
   <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-        <h2 class="text-xl font-semibold text-gray-800 mb-4"> {{movie().title}} </h2>
-        <p class="text-gray-600"> {{ movie().overview }} </p>
+        <h2 class="text-xl font-semibold text-gray-800 mb-4"> {{ movie()['#TITLE'] }} </h2>
+        <p class="text-gray-600"> {{ movie()['#YEAR'] }} </p>
+        <img [src]="movie()['#IMG_POSTER']"
+          [width]="movie().photo_width"
+          [height]="movie().photo_height"
+              >
         <button class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded">
           Ver más
         </button>
@@ -22,7 +26,9 @@ import { Movie } from '../../interfaces/movies.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieCardComponent {
-  movie = input.required<Movie>();
+  movie = input.required<Description>();
+
+
 
 
 

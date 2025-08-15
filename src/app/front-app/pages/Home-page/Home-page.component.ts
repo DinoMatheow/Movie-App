@@ -14,7 +14,7 @@ export class HomePageComponent {
 
   private movieService = inject(MoviesService);
 
-  query = signal('films');
+  query = signal('recomendation');
   movieResource = rxResource({
     request:()=> ({query:this.query() }),
     loader: ({ request }) => this.movieService.getMovies(request.query)
